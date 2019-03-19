@@ -1,0 +1,75 @@
+table img.list {
+    width: 30px !important
+}
+
+div.card-body img.detail{
+    width: 40px !important
+}
+ li.nav-item  {
+    padding: 10px
+}
+
+/* button {
+    padding: 10px 55px;
+    border-radius: 25px;
+    margin: auto 110px;
+    border: none;
+    margin-top: 30px;
+    cursor: pointer;
+    background: #ff8600;
+    font-weight: bold;
+    color: #fff;
+    font-size: 18px;
+} */
+
+/*
+.body {
+    width: 380px;
+    height: 350px;
+    border-radius: 20px;
+    margin: auto;
+    background: #fff;
+}
+
+.input {
+    padding: 30px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 25%;
+}
+
+.icon-desktop{
+    margin-top: 30px;
+}
+
+button {
+    padding: 10px 55px;
+    border-radius: 25px;
+    margin: auto 110px;
+    border: none;
+    margin-top: 30px;
+    cursor: pointer;
+    background: #ff8600;
+    font-weight: bold;
+    color: #fff;
+    font-size: 18px;
+}
+
+.table i {
+    padding-left: 40px;
+    font-size: 30px;
+    padding-top: 25px;
+    color: #808080;
+}
+
+input::placeholder{
+    color: #808080;
+    font-size: 20px;
+    font-family: lato;
+} */
+
+/* #explore-head-section {
+    font-style: normal;
+    height: 800px;
+    background-image: url(./image/bg-image.jpg)
+} */
