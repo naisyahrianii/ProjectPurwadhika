@@ -1,17 +1,7 @@
-import axios from 'axios'
+import axios from '../config/axios'
 import cookies from 'universal-cookie'
 
 const cookie = new cookies()
-
-// export const onAddClick = (Pnama, Pdesc, Pprice, Psrc) => {
-    
-//     return () => {
-//         axios.post("http://localhost:1996/product",{
-                
-            
-//         })
-//     }
-// }
 
 export const onLogout = () => {
     return{
@@ -27,7 +17,7 @@ export const timeout = () => {
 
 export const onLoginclick = (user, pass) => {
     return (dispatch) => {
-    axios.get("http://localhost:1997/users",{
+    axios.post('/customers/login',{
         params: {
             username: user,
             password: pass
@@ -49,11 +39,11 @@ export const onLoginclick = (user, pass) => {
                 payload: "Username and password don't match"
             })
 
-            setTimeout (() => {
-                dispatch({
-                    type: 'TIMEOUT'
-                })
-            }, 3000);
+            // setTimeout (() => {
+            //     dispatch({
+            //         type: 'TIMEOUT'
+            //     })
+            // }, 3000);
         }
 
         console.log(res.data)
@@ -63,40 +53,24 @@ export const onLoginclick = (user, pass) => {
     }
 }
 
-export const onRegisterUser = (user,mail,pass) => {
-    return dispatch => {
-        axios.get('http://localhost:1997/users', {
-            params: {
-                username: user
-            }
-        }).then(res => {
-            if(res.data.length === 0){
-                axios.post('http://localhost:1997/users', {
-                    username: user,
-                    email: mail,
-                    password: pass
-                }).then(res => {
-                    console.log("registrasi berhasil")
-                    dispatch({
-                        type: "AUTH.SUCCESS",
-                        payload: "Register berhasil"
-                    })
-                })
-            } else {
+export const onRegisterUser = (name,user,mail,pass) => {
+        return dispatch => {
+            axios.post('/customers', {
+                name: name,
+                username: user,
+                email: mail,
+                password: pass
+            }).then(res => {
+                console.log("registrasi berhasil")
                 dispatch({
-                    type: 'AUTH.ERROR',
-                    payload: 'Username has been taken'
+                    type: "AUTH.SUCCESS",
+                    payload: "Register berhasil"
                 })
+            })   
+        }
+    }   
 
-                setTimeout (() => {
-                    dispatch({
-                        type: 'TIMEOUT'
-                    })
-                }, 3000);
-            }
-        })    
-    }
-}
+
 
 export const onLogoutUser = () => {
     cookie.remove('masihLogin')
@@ -107,7 +81,7 @@ export const onLogoutUser = () => {
 
 export const keepLogin = (user) => {
     return dispatch => {
-        axios.get('http://localhost:1997/users', {
+        axios.post('/customers/login', {
             params: {
                 username: user
             }

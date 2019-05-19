@@ -6,8 +6,11 @@ import cookies from 'universal-cookie'
 import {keepLogin} from '../actions'
 
 import Header from './Header'
+import Home from './Home'
 import Login from './Login'
 import Register from './Register'
+import Blog from './Blog'
+import Product from './Product'
 
 const cookie = new cookies()
 
@@ -23,7 +26,6 @@ export class App extends Component {
             // function keepLogin akan me-loginkan ulang username yg tersimpan pada file cookie
             this.props.keepLogin(userCookie)
         }
-
     }
 
   render() {
@@ -31,12 +33,16 @@ export class App extends Component {
         <BrowserRouter>
             <div>
                 <Header />
+                {/* <Home /> */}
+                <Route path='/Home' component={Home}/>
                 <Route path='/Login' component={Login}/>
                 <Route path='/Register' component={Register}/>
+                <Route path='/Blog' component={Blog} />
+                <Route path='/Product' component={Product} />
+                
+                {/* <Route path /> */}
             </div>
         </BrowserRouter>
-        
-        
     )
   }
 }

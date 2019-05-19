@@ -5,10 +5,50 @@ table img.list {
 div.card-body img.detail{
     width: 40px !important
 }
- li.nav-item  {
+
+li.nav-item  {
     padding: 10px
 }
 
+#home-section{
+    background: url(./image/Group.jpg);
+    background-size: 100px;
+}
+
+.nav-link{
+    color: #848994;
+    padding: 2px;
+}
+
+aside .widget .product-categories li{
+	padding-bottom: 8px;
+	margin-bottom: 3px;
+}
+
+aside .widget .product-categories li:last-child{
+	margin-bottom: 18px;
+}
+
+aside .widget .product-categories li .count{
+	font-size: 13px;
+	float: right;
+	color: #848994;
+}
+
+aside .widget .product-categories li.cat-parent > a,
+aside .widget .product-categories li.current-cat > a{
+	font-weight: bold;
+}
+
+aside .widget .product-categories > li ul{
+    margin-right: 20px;
+    float: right;
+}
+
+.theme-description__item__title{
+    margin-right: 180px;
+    color: #43464d;
+}
 /* button {
     padding: 10px 55px;
     border-radius: 25px;
